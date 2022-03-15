@@ -17,7 +17,8 @@ Neutralino.events.on('ready', () => {
         emoji.addClass('copied');
         // Select the emoji
         range.selectNodeContents(this);
-        (selection.removeAllRanges()).addRange(range);
+        selection.removeAllRanges();
+        selection.addRange(range);
         // Copy the emoji
         document.execCommand("copy");
         selection.removeAllRanges();
