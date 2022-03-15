@@ -1,0 +1,144 @@
+@import "normalize";
+
+body {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  font: {
+    family: sans-serif;
+    size: 20px;
+  }
+  line-height: 25px;
+  background: #f8f8f8;
+  overflow: hidden;
+  direction: ltr;
+
+  div.search {
+    position: relative;
+    padding: 10px;
+    font-size: 85%;
+    border-top: 1px rgba(0,0,0,.1) solid;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      height: fit-content;
+      margin: auto;
+
+      &[info] {
+        right: 20px;
+        left: auto;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    input {
+      width: calc(100% - 100px);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset;
+      padding-left: 40px;
+      transition: box-shadow 0.15 ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1) inset;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.2) inset;
+      }
+    }
+  }
+
+  div.list {
+    padding: 10px;
+    display: flex;
+    flex: {
+      direction: row;
+      wrap: wrap;
+    }
+    justify-content: flex-start;
+    font-size: 95%;
+    align: {
+      items: baseline;
+      content: baseline;
+    }
+    height: calc(100% - 85px);
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-top: 5px;
+
+    div.emoji {
+      margin: 3px;
+      padding: 5px;
+      border-radius: 10px;
+      transition: box-shadow 0.15 ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      &.copied {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  div.info {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -220px;
+    margin: auto;
+    background: rgba(255,255,255,0.95);
+    padding: 10px;
+    border-top: 1px rgba(0,0,0,0.1) solid;
+    border-top: {
+      left-radius: 10px;
+      right-radius: 10px;
+    }
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 80%;
+    transition: bottom 0.75s ease-out;
+
+    &.show {
+      bottom: 0;
+    }
+
+    div.logo {
+      font-size: 250%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    div.title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 145%;
+
+      sup {
+        font-weight: 100;
+        font-size: 55%;
+      }
+    }
+
+    div.description {
+      text-align: center;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+  }
+}
