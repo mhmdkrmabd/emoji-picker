@@ -42,6 +42,7 @@ Neutralino.events.on('ready', () => {
     });
     let github = "https://github.com/mhmdkrmabd/emoji-picker";
     $('a').text(github);
+    $('a').attr('href', github);
     // On click open the github url
     $('a').click(function() {
       Neutralino.os.open(github);
